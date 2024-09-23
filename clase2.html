@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #titulo{
+            color: red;
+            font-family: sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>Metodos de salida en JavaScript</h1>
+    <script>
+       /* //Ejercicio1: pedir la edad y decir si es mayor o menor de edad
+        let edad=parseInt(prompt('Ingresa tu edad'))
+        if(edad>=18){
+            alert('Eres mayor de edad');
+        }else{
+            alert('Eres manor de edad');
+        }*/
+
+    </script>
+    <script>
+    //Ejercicio 2: pedir un numero y determinar si es par o impar
+    
+      /*  let numero=parseInt(prompt('ingrese su numero'));
+        if(numero %2==0){
+            alert('El '+numero+' es par');
+        }else{
+            alert('El '+numero+' es impar');
+        } */
+    </script>
+    <h3>Metodo de salida por consola</h3>
+    <p>
+        sintaxis: console.log('Mensaje'); nos permite mostrar mensajes sin modificar el desarollo comun del programa, tambien verificar el estado de una variable en cualquier punto. Con este metodo no podemos pedir informacion, ya que, es es solamente informativo
+    </p>
+    <script>
+        //Ejemplo:
+        console.log('Hola desde la consola');
+    </script>
+    <h3>Meotodo de salida por documentos</h3>
+    <p>
+        sintaxis: document.write('Mensaje'); nos permite mostrar un mensaje dentro de la pagina(se comporta como una estiqueta), con este metodo no podemos pedir informacion, ya que, este es solo informativo
+    </p>
+    <script>
+        //Ejemplo:
+        document.write('<h1 id="titulo">Hola desde el documento</h1>');
+    </script>
+    <h3>Eventos, Funciones y DOM en JavaScript</h3>
+    <button type="button" onclick="Alterta()">Mostrar Alerta</button><!--onclick="Alterta(), cuando el usuaurio haga click en el boton se va a ejecutar una funcion llamada Alerta, que esta va a estar programada desde JavaScript-->
+    <script>
+        //Crear una funcion llamada Alerta
+        function Alterta(){
+            alert('Hola desde la función');
+        }
+    </script>
+    <p id="color">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum repellendus minima odit dicta vitae sed illo blanditiis perspiciatis, labore beatae, architecto ad minus aliquam magni neque corrupti, quae similique? Excepturi.
+        Nihil ullam unde qui quia dignissimos deserunt illo optio. In, id doloremque veritatis omnis officia impedit autem pariatur soluta porro dicta dolor fugit, magni laborum quam, sunt consequuntur mollitia explicabo.
+    </p>
+    <button type="button" onclick="Cambiar()">Cambiar color parrafo</button>
+    <script>
+        function Cambiar(){
+            document.getElementById("color").style.color='green';
+        }
+    </script>
+    <br><br>
+    <button type="button" onclick="Apagar()">Apagar</button>
+    <img src="./img/apagado.png" alt="" id="img">
+    <button type="button" onclick="Encender()">Encendido</button>
+    <script>
+        function Apagar(){
+            document.getElementById("img").src="./img/apagado.png";
+        }
+        function Encender(){
+            document.getElementById("img").src="img/encendido.pgn.PNG";
+        }
+
+    </script>
+
+</body>
+</html>

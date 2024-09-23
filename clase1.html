@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Metodos de salida y variables con JavaScript</h1>
+    <p>
+        1.Las variables se definen con un var o un let seguido de la variable.
+        <br>
+        Ejemplo: let Nombre
+    </p>
+    <p>
+        Metodo de salida:Nos permite mostrar informacion, mensajes, tambien pedir informacion
+        <br>
+        1.Alertas:es un cuadro de dialogo emergente que gneera el navegador y ese tiene 3 tipos:
+        <br>
+        prompt(''):muestra un mensaje pero genera un cuadro de texto donde el usuario puede ingresar informacion
+        <br>
+        confirm(''): muestra un mensaje pero le da a el usuario la opcion de aceptar (1) o de cancelar (0)
+    </p>
+    <script>
+        //alert('Hola desde JavaScript');/*genera un mensaje en el navegador, el cual aparecera despues de cada cambio debido a que no se encuentra en ningun programa*/
+        let nombre;
+        nombre=prompt('Ingresa tu nombre');
+        alert('Bien venid@ '+nombre)
+    </script>
+</body>
+</html>

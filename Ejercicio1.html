@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Ejercicio 1</h3>
+    <p>Pedir 2 numeros, sumarlos y mostrar su resultado en una estiqueta de HTML.</p>
+    <button type="button" onclick="Sumar()">Sumar 2 numeros</button>
+    <p id="resultado"></p>
+    <!--Identificar que etiqueta de html debe llevar el evento para realizar la interacion-->
+    <!--Una funcion de JavaScript es aquella que nos permite realizar un codigo estructurado, es decur, las funciones son las que le dan una programacion a los elementos entre HTMl y JavaScript, aqui es donde se crean los algoritmos(programas), tambien estas funciones se pueden volver a usar, significa que varios elementos pueden compartir funciones y para ejecutar la guncion se debe: NombreFuncion(),
+    para crear la funcion es: funcion Nombre {programa}-->
+    <script>
+        function Sumar(){
+        //Datos de entrada
+        let numero1=parseInt(prompt('Ingrese el primer numero'));
+        let numero2=parseInt(prompt('Ingrese el segundo numero'));
+        //proceso
+        let suma=numero1+numero2;
+        //Dato de salida
+        //alert('El resultado de la suma entre los ingresados es de: '+suma)
+        document.getElementById('resultado').innerText='El resultado de las suma entre los numeros ingresados es de: '+suma;
+        //Estamos llamando un elemento(Etiqueta) del documento por su id
+        //inneText o innerHTML es un metodo de salida que me permite mostrar un mensaje dentro de una estiqueta.
+        }
+    </script>
+    <h3>Ejercicio 2</h3>
+    <p>
+        Crear un programa que le permita al usuario ingresar los datos de dos buses asi: Placa, el numero de pasajeros transportados y el valor del pasaje y el computador muetra la placa del bus que mas dinero recogio
+        <br>
+        En este Ejerciciovamos a aplicar: eventos, Metodos de salida, DOM y funciones
+    </p>
+    <h5 id="resultados"></h5>
+    <button type="button" onclick="Buses()">Mayor recaudo</button>
+    <script>
+        function Buses()
+        {   
+            //Datos entrada
+            let placa1=prompt('ingrese el numero de placa del bus 1');
+            let numeroPasajeros1=parseInt(prompt('ingrese el numero de pasajeros del bus 1'));
+            let valorPasaje1=Number(prompt('ingrese el valor del pasaje'));
+
+            let placa2=prompt('ingrese el numero de placa del bus 2');
+            let numeroPasajeros2=parseInt(prompt('ingrese el numero de pasajeros del bus 2'));
+            let valorPasaje2=Number(prompt('ingrese el valor del pasaje del bus 2'));
+
+            //Proceso
+            let bus1=valorPasaje1*numeroPasajeros1;
+            console.log('Total bus 1: '+bus1)
+            let bus2=valorPasaje2*numeroPasajeros2;
+            console.log('Total bus 2: '+bus2)
+
+            if(bus1>=bus2){
+            document.getElementById('resultados').innerText='El primer bus con placa: '+placa1+' fue el bus que mas dinero recogio, con un total de: '+bus1;
+            }else if(bus2>=bus1){
+            document.getElementById('resultados').innerText='El segundo bus con placa: '+placa2+' fue el bus que mas dinero recogio, con un total de: '+bus2;
+            }else{
+            document.getElementById('resultados').innerText='Ambos buses recogieron la misma cantidad de dinero, para un total de '+bus1;
+            }
+
+
+    
+      
+            
+
+        
+
+           
+        }
+    </script>
+</body>
+</html>
