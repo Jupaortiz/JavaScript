@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El título de mi página</title>
+    <script type="text/javascript">
+        alert("Hola Mundo!");
+    </script>
+    
+
+
+</head>
+<body>
+    <p>Esta página contiene el primer script
+
+    </p>
+
+    <p>2.	Completar las condiciones de los if del siguiente script para que los mensajes se muestren siempre de forma correcta:
+        <p id="mensaje"></p>
+
+    </p>
+    <script>
+        let numero1 = 5;
+        let numero2 = 8;
+
+        if(numero1<numero2) {
+        document.write("numero1 no es mayor que numero2 <br>");
+        }else
+        if(numero2<0) {
+        document.write ("numero2 es positivo <br>");
+        }
+        if(numero1!=0) {
+        document.write ("numero1 es distinto de cero");}
+     </script>
+
+    <p>
+        3.	El factorial de un número entero n es una operación matemática que consiste en multiplicar todos los factores n x (n-1) x (n-2) x ... x 1. Así, el factorial de 5 (escrito como 5!) es igual a: 5! = 5 x 4 x 3 x 2 x 1 = 120
+        <br>
+        Utilizando la estructura for, crear un script que calcule el factorial de un número entero.
+    </p>
+    <script>
+
+        //Datos de entrada
+        let numero=parseInt(prompt('ingrese el numero'))
+        let factorial=1;
+        
+        //Verificar que el numero no sea negativo
+        if(numero>=0){
+            for(let i=1; i<=numero;i++){ //usar un bucle para calcular el factorial
+                factorial*=i; //multiplicar el valor actual del facotrial por i
+            }
+        //mostrar el resultado
+            document.write("El factorial del numero "+numero+ " es: "+factorial);
+        }else{
+            document.write("El numero debe ser positivo")
+        }
+    </script>
+    
+      
+</body>
+</html>

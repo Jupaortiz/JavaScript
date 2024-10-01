@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú Hamburguesa</title>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        /* Estilos del botón hamburguesa */
+        .hamburguesa {
+            display: none;
+            cursor: pointer;
+            font-size: 30px;
+        }
+
+        /* Ocultar el menú en pantallas pequeñas */
+        @media screen and (max-width: 600px) {
+            nav ul {
+                display: none;  /* Oculta el menú inicialmente en dispositivos móviles */
+                flex-direction: column;
+            }
+
+            .hamburguesa {
+                display: block;  /* Mostrar el botón hamburguesa en móviles */
+            }
+
+            .mostrar {
+                display: flex;  /* Mostrar el menú cuando se activa */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="hamburguesa" id="btnHamburguesa">&#9776;</div> <!-- Botón hamburguesa -->
+        <ul id="menu">
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Servicios</a></li>
+            <li><a href="#">Nosotros</a></li>
+            <li><a href="#">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <script>
+        // Seleccionamos el botón hamburguesa y el menú
+        const btnHamburguesa = document.getElementById('btnHamburguesa');
+        const menu = document.getElementById('menu');
+
+        // Añadimos un event listener para activar el menú cuando se haga clic
+        btnHamburguesa.addEventListener('click', function() {
+            menu.classList.toggle('mostrar');  // Alterna la clase "mostrar" en el menú
+        });
+    </script>
+
+</body>
+</html>
