@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>
+        crear un formulario que permita ingresar un valor en Euros y conventirlo a pesos, donde tambien exista un boton con la opcion de puedan ser limpiados, los campos de l formulario
+        <br>
+        opcion1: el usuario ingrese el valor en euros y se muestre su valor en pesos
+        <br>
+        opcion2: el usuario ingresa un valor y le damos la opcion de convertirlo de euros a pesos o de pesos a euros
+    </p>
+
+    <h1>Convertidor de Euros a Pesos / Pesos a Euros</h1>
+
+    <form action="">
+        <label for="">Cantidad</label>
+        <br><br>
+        <input type="number" name="" id="valor" placeholder="Escribe el valor a convertir">
+        <br><br>
+        <select name="" id="convertidor">
+            <option value="">Pesos a Euros</option>
+            <option value="">Euros a Pesos</option>
+        </select>
+        <br><br>
+        <input type="button" value="convertir" onclick="Convetir()">
+    </form>
+    <p id="total"></p>
+
+
+ <script src="./js/calcular.js"></script>
+
+ <form action="">
+    <label for="">Procesador</label><br><br>
+    <select name="" id="">
+        <option value="">Intel I3 - $400.000</option>
+        <option value="">Intel I5 - $600.000</option>
+        <option value="">Intel I7 - $800.000</option>
+    </select>
+    <label for="">Monitor</label><br><br>
+    <select name="" id="">
+        <option value="">Samung 20' - $250.000</option>
+        <option value="">Samung 22' - $350.000</option>
+        <option value="">Samung 26' - $550.000</option>
+    </select>
+    <label for="">Disco Duro</label><br><br>
+    <select name="" id="">
+        <option value="">500 Gb - $300.000</option>
+        <option value="">1 TB - $440.000</option>
+        <option value="">3 TB - $500.000</option>
+    </select>
+    <br><br>
+    <input type="button" value="Mostrar Presupuesto">
+ </form>
+    <p class="totalp"></p>
+
+</body>
+</html>
