@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Ejericio</h1>
+<script>
+    let compra={
+        "Producto":[],
+        "Cantidad":[],
+        "Precio":[]
+    }
+    let cantidadProducto=Number(prompt("¿Cuantos productos vas a comprar?"));
+    console.log(+cantidadProducto)
+
+    for(let i=0;i<cantidadProducto;i++){
+        for(key in compra)
+        {
+            compra[key][i]=prompt("ingrese "+key+ "# "+(i+1));
+        }
+        Cantidad[i]=prompt('Ingrese el nombre del producto #'+(i+1))
+    }  
+    console.log(compra)
+</script>
+</body>
+</html>

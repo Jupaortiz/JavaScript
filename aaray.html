@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Array en Java <Script></Script></h1>
+    <p>
+        Es una colecion de datos dentro de una misma variable o constante
+    </p>
+    <script>
+        //Declaracion de un array
+        let nombres=['Juan','Maria','Camilo','Mateo','Luisa','Paulina']; //6 datos al macenados
+        //indices      0       1       2        3      4        5  --> Posicion de datos dentro del array
+        //simbolo son los []
+        //Mostrar un dato arreglado:
+        console.log("El estudiante que esta en la posicion 2 es: "+nombres[2])
+        //nombeArray[indice]--> Imprimir un dato del arreglo.
+
+        //Agregar manual
+        console.log(nombres);
+        nombres[6]="Tatiana"
+        nombres[7]="Daniel"
+        console.log(nombres);
+
+        //Arreglo puede ser Mixto, puede guardar distintos tipos de informacion:
+        let mixto= [
+                    "letras", //String
+                    3, //numero
+                    true, //boolean
+                    function saludad() //Funcion
+                    {
+                        return 'hola desde el arreglo'
+                    },
+                    ['David',3, "Abogados"] //otro arreglo
+                   ];
+        console.log("Valor numerico del arreglo: "+mixto[1]);
+        console.log("valor booleano del arreglo es: "+mixto[2]);
+        console.log("Valor de la funcion del arreglo "+mixto[3]());
+        console.log("valor arreglo dentro de otro arreglo "+mixto[4][2]);
+    </script>
+    <h1>Objetos en JavaScript</h1>
+    <p>
+        Tabmen es una colecion de datos que estos se guardan en forma de clave:valor
+    </p>
+    <script>
+        //Declaracion de objeto
+        let carro={
+            Marca:"Mazda",
+            Modelo:"2023",
+            Color:"Negro"
+        }
+        //Calves: Marca, Modelo, Color
+        //Datos: Mazda, 2023, Negro
+
+        //Mostrar la informacion del objeto
+        console.log("la marca de mi carro es: "+carro.Marca);
+
+        let objetoMixto={
+            clave1:"Letras",
+            clave2:123,
+            clave3: false,
+            clave4:function saludar()
+            {
+                return'Hola desde el arreglo';
+            },
+            clave5:["Dato 1", "Dato 2", "Datos 3"],
+            clave6:{
+                Nombre:"Julian",
+                Edad: 30,
+                Carrera:"Ingenieria"
+            }
+        }
+
+    //Mostrar infromacion
+    console.log("Funcion del objeto: "+objetoMixto.clave4());//Los () para ejecutar la funcion
+    console.log("Dato del objeto: "+objetoMixto.clave6.Edad);//los . porque estamos imrpimiendo un dato que es otro objeto para aceder a las informacion de los objetos se hace por medio de los . y sus claves
+    console.log("Arreglo del objeto: "+objetoMixto.clave5[1]);// los[] porque estamos imprimiendo una clave que almacena un arreglo
+    </script>
+
+    <h3>Ejercicio sobre areglos y objetos dinamicos</h3>
+    <script>
+   //Declarar el arreglo
+        let frutas=[];//Arreglo
+
+        //1.Preguntar cuanras frutas deseas guarda:
+        let cantidad=Number(prompt('ingresa el nombre la cantidad de frutas:'));
+
+        //2. Crear un ciclo for
+        for(let i=0;i<cantidad;i++){
+            frutas[i]=prompt('Ingrese el nombre de la fruta #'+(i+1))
+        }
+        
+        //Mostrar informacion del arreglo:
+
+        for(x=0;x<frutas.length;x++){
+         document.write("Fruta: "+frutas[x]+"<br>");
+    }
+    
+    </script>
+    <script>
+    //1.Este clico se ejecuta tantas veces como el valor de la caontidad(numero de furtas que el usuario quiere ingresar)
+    //2.En cada interacion del ciclo, se le pide al usuario que ingrese el nombre de la fruta mediante el promt. El 
+    //3.El nombre de ña frutas ingresada por el usuario se guarda en la posicion correspomdiente del arra, frutas(por ejemplo frutas[0], frutas[1]...) 
+
+    
+
+    /*1. En este ciclo recorre todo el array de */
+
+    //Objetos dinamicos
+    document.write("Objetos dinamicos"+"<br>");
+    //Declarar el objeto vacio:
+    let empleados={
+        Nombre:"",
+        Edad:"",
+        Profesion:""
+    }
+    for(let claves in empleados)
+    {
+        empleados[claves]=prompt("ingrese su "+claves)
+    }
+    //1.Este ciclo for-in recorre todas las propiedades del objeto empleados
+    //2.Para cada propiedad, se escribe su nombre valor asociados a esa propiedad(empleados[claves])
+    //3.La variable claves toma el nombre de cada propiedad del objeto, es decir:Nombre, Edad y Profesion
+    //4.en cada interacion, se llama a prompt, que le pide al usuario los valoes que se van a llamar en cada propiedad
+
+    console.log(empleados)
+
+    //Mostar la informacion del objeto mostrnaod su clave y su valor
+    for(let claves2 in empleados)
+    {
+        document.write(claves2+" :"+empleados[claves2]+"<br>")
+    }
+    
+    </script>
+    
+
+</body>
+</html>
