@@ -6,24 +6,42 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Ejericio</h1>
-<script>
-    let compra={
-        "Producto":[],
-        "Cantidad":[],
-        "Precio":[]
-    }
-    let cantidadProducto=Number(prompt("¿Cuantos productos vas a comprar?"));
-    console.log(+cantidadProducto)
+    <h1>Ejercicio</h1>
+    <script>
+        let compra={
 
-    for(let i=0;i<cantidadProducto;i++){
-        for(key in compra)
-        {
-            compra[key][i]=prompt("ingrese "+key+ "# "+(i+1));
+        "producto":[],
+        "Cantidad":[],
+        "Precio":[],
         }
-        Cantidad[i]=prompt('Ingrese el nombre del producto #'+(i+1))
-    }  
-    console.log(compra)
-</script>
+        let cantidadProducto = Number(prompt("¿cuantos productos vas a comprar?"));
+
+        for(i=0;i<cantidadProducto; i++)
+        {       
+            for(let claves in compra){
+                compra[claves][i] = prompt("Ingrese el " + claves +" #"+(i + 1));
+            }
+        }
+            //mostrar datos
+
+            let totalCompra=0;
+            for(let j=0;j<cantidadProducto;j++) {
+                let totalPrducto=0;
+
+                for(let prod in compra) { 
+
+                    document.write(prod+":"+compra[prod][j]+"<br/>");
+                    totalProducto=Number(compra.Cantidad[j])*Number(compra.Precio[j]);
+                }   
+                totalCompra+=totalPrducto;
+                document.write("Total de la compra: "+totalProducto+"<br/>");
+                document.write("----------<hr/>");
+            
+            }
+
+        document.write("Total a pagar por todos los produtos: "+totalCompra);
+
+
+    </script>
 </body>
 </html>

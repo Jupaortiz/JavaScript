@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Datos de compra</h1>
+    <script>
+        let compraEntradas=
+        {
+            "Evento":[],
+            "Cantidad":[],
+            "Precio":[],
+            "Tiempo":[]
+        }
+        let cantidadEventos=Number(prompt("¿A cuantos eventos desea ingresar?"));
+        for(i=0;i<cantidadEventos;i++)
+        {
+            for(let claves in compraEntradas)
+            {
+                compraEntradas[claves][i]=prompt("ingrese el "+ claves +" #"+(i + 1));
+            }
+        }
+        //Mostrar datos
+        let totalCompra=0;
+        let TiempoTotal=0;
+        for(let c=0;c<cantidadEventos;c++)
+        {
+            let totalPrducto=0;
+            for(let producto in compraEntradas)
+            {
+                document.write(producto+":"+compraEntradas[producto][c]+"<br/>");
+
+            }
+            if(Number(compraEntradas.Tiempo[c]<10))
+            {
+                alert("Advertencia: el tiempo de del evento # "+ (c + 1) + " es mayor a 10 horas")
+            }else
+            {
+                document.write("El tiempo total: "+TiempoTotal+"<br/>");
+            }
+                totalPrducto=Number(compraEntradas.Cantidad[c])*Number(compraEntradas.Precio[c]);
+                TiempoTotal=Number(compraEntradas.Cantidad[c])*Number(compraEntradas.Tiempo[c]);
+            
+            totalCompra+=totalPrducto;
+                document.write("Total de la compra: "+totalPrducto+"<br/>");      
+                document.write("----------<hr/>");
+        }
+
+        if (totalCompra > 500000) {
+        totalCompra *= 0.9; // Aplicar el 10% de descuento
+        document.write("Descuento aplicado: 10% <br/>");
+    }
+        document.write("Total a pagar por todos los produtos: "+totalCompra);
+    </script>
+</body>
+</html>
