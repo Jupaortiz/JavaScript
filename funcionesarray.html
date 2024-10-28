@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Funciones para la manipulacion de Array</h1>
+    <p>
+        1.¿como podemos aobtener la cantidad de elementos de una arreglo?
+    </p>
+    <p>
+        length: es la longitud del arreglo, quiere decir que devuelve el tamaño(cantidad) de datos que esta almacenado en un arreglo
+    </p>
+    <script>
+        //Ejemplo:
+        let animales=['leon','Gato','Osos','Conejo'];
+        //Induces:       0     1       2        3
+        console.log("El arreglo de animales tiene "+animales.length+" elementos alamcenados")
+        //Todas las funciones se escriben: nombreArray.nombreFuncion
+    </script>
+    <p>
+        2.¿como puedo remover un valor al final del arreglo
+    </p>
+    <p>
+        pop(): este metodo elimina el ultimo elemnto del arreglo.
+    </p>
+    <script>
+        let colores=['Azul','Verde','Negro','Rojo'];//4 datos
+        console.log(colores);//Mostrar todos los elementos del arreglo.
+
+        colores.pop();//Aqui elemina el ultimo dato del arreglo
+
+        console.log(colores);
+    </script>
+    <p>
+        3.¿como podemos agregar un nuevo valor al final del arreglo?
+    </p>
+    <p>
+        push(): ingresa un nuevo valor al final del arreglo.
+    </p>
+    <script>
+        colores.push('Morado'); //Se agrefa un nuevo valor al final del areglo, donde anteriormente era, Azuls, Verde, Negro, porque con pop eliminamos el valor Rojo
+        console.log(colores)
+    </script>
+    <p>
+        4.¿como podemos eliminar el primer dato del arreglo?
+    </p>
+    <p>
+        shift(): elimina el primer valor del arreglo, se modifican los indices de ya que estamos cambiando el indice 0
+    </p>
+    <script>
+        colores.shift()//Eliminando el elemento 'Azul'
+
+        console.log(colores);
+    </script>
+    <p>5.¿como podemos agregar un valor al comienzo del arreglo?</p>
+    <p>
+        unshift(): agrega un nuevo valor al comienzo del arreglo
+    </p>
+    <script>
+        colores.unshift('Cafe');
+
+        console.log(colores);
+    </script>
+    <p>
+        6.¿como podemos eliminar y agregar valores al mismo tiempo?
+    </p>
+    <p>
+        splice(0.0,""): el primer 0 indica el indice donde va a empezar el cambio, el segundo 0 indica la cantidad de elementos que deseamos eliminar desde el indice que se indico anteriormente y las comillas es el nuevo valor que se agregara desde el indice indicado en el primer 0
+    </p>
+    <script>
+        let frutas=['Mango','Banano','Pera','Uva']
+        console.log(frutas);
+
+        //Eliminar al valor 'Pera' del arreglo
+        frutas.splice(2,1)
+        console.log(frutas);
+
+        //Agregar el valor 'sandia' y 'Naranja' desde el indice 1, sin eliminar ningun elemento:
+        frutas.splice(1,0,'Sandia', 'Naranaja')
+        console.log(frutas);
+    </script> 
+    <p>
+        7.¿como podemos convertir un arreglo en una cadena de texto?
+    </p>
+    <p>
+        .toString(): convierte la informacion del arreglo en una decadena de texto cada dato por comas(,)
+    </p>
+    <script>
+        console.log("las Frutas del arreglo son "+frutas.toString());
+    </script>
+    <p>
+        8.¿Como podemos separar el arreglo en una dena de texto y definir su separador?
+    </p>
+    <p>
+        join(): este metodo tambien convierte la infomracion del arreglo en una cadena de texto pero le podemos cambiar las "," por otros separador?
+    </p>
+    <script>
+        console.log("Cambiando el separador del arreglo futas: "+frutas.join('-'));
+    </script>
+
+</body>
+</html>

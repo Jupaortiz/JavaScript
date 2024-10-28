@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Ejercicio funciones Array</h1>
+    <p>
+        1. Guarda en un array 8 frutas y muestra las 3 del medio
+        2. Declara un array que vamos a llamar "clasificaciones" con los siguientes valores:
+            Ana,Oswaldo,Raul,Celia,Maria,Antonio
+            a. Celia adelanta a Raul
+            b.Antonio es decalificado y se elimina del concurso
+            c.Detras de Ana y antes de Oswaldo se clasifican dos nuevos concursantes; Roberto y Amaya, en ese orden 
+            d. Hay un participante que pasa a en cabezar la  clasificacion: Maria
+    </p>
+    <script>
+        //1. Array de 8 frutas:
+        let frutas=['Mango','Papaya','Manzan','Fresa','Lulo','Kiwi','Cereza','Borojo'];
+        console.log(frutas);
+        frutas.splice(0,3);
+        frutas.splice(3,4);
+        console.log(frutas);
+
+        //2. Array Clasificaciones:
+        let clasificaciones=[ 'Ana','Oswaldo','Raul','Celia','Marta','Antonio'];
+        console.log(clasificaciones);
+        
+        //Celia adelanta a Raul
+        clasificaciones.splice(3,1);
+        clasificaciones.splice(2,0,'Celia')
+        console.log(clasificaciones);
+
+        //Amtonio es desclasificado
+        clasificaciones.pop();
+        console.log(clasificaciones);
+
+        //Entran Soberto y Amaya
+        clasificaciones.splice(1,0,'Roberto','Amaya')
+        console.log(clasificaciones)
+
+        //Marta encabeza la clasificacion
+        clasificaciones.pop();
+        clasificaciones.unshift('Marta')
+        console.log(clasificaciones);
+
+      
+    </script>
+
+</body>
+</html>
