@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Taller Arreglos y Objetos Estaticos/Dinamicos</h1>
+    <p>
+        1.Del siguiente enunciado, los espacios deben llenarse
+        de acuerdo a la información que tengas almacenada
+        en un objeto ya definido: <br>
+        a. El vehículo con marca ______ de color _____
+        tiene un costo de ________ <br>
+        b. Mostrar el resultado final en pantalla
+    </p>
+    <p id="resultado"></p>
+    <script>
+        let vehículo=
+        {
+            Marca:"Toyota",
+            Color:"verde",
+            Costo:"2'000.000"
+        }
+        document.getElementById('resultado').innerText="El vehiculo de "+vehículo.Marca+ " con color "+vehículo.Color+ " tiene un costo de "+vehículo.Costo; 
+    </script>
+    <p>
+        2. De la siguiente imagen, crea el código necesario para
+        hacer que los botones funcionen, debes implementar
+        eventos, funciones y la manera en que los arreglos se
+        llenan de forma dinámica
+    </p>
+        <form action="">
+            <label for="">Introduce los datos del primer arreglo</label><br><br>
+            <input type="text" id="primer">
+            <button type="button" id="primerbtn">Guardar</button><br><br>
+
+            <label for="">Introduce los datos del segundo arreglo</label><br><br>
+            <input type="text" id="segundo">
+            <button type="button" id="segundobtn">Guardar</button><br><br>
+
+            <button type="button" id="mostrarbtn">Mostrar Valores</button>
+        </form>
+        <p id="mostrar"></p>
+    
+    <script>
+        let arreglo1=[];
+        let arreglo2=[];
+
+        document.getElementById("primerbtn").addEventListener("click",function(){
+            arreglo1.push(document.getElementById("primer").value);
+            document.getElementById("primer").value = "";
+        });
+            document.getElementById("segundobtn").addEventListener("click", function() {
+            arreglo2.push(document.getElementById("segundo").value);
+            document.getElementById("segundo").value = "";
+        });
+
+        document.getElementById("mostrarbtn").addEventListener("click", function() {
+        document.getElementById("mostrar").textContent ="Primer arreglo: " + arreglo1.join(", ") + " | Segundo arreglo: " + arreglo2.join(", ");
+        });
+
+    </script>
+    <p id="media">
+        3.Crear un objeto que se use para guardar la información sobre las calificaciones de un alumno. El curso contiene tres materias: Ingles, programación y HTML, y el objeto contendrá el nombre del alumno y la calificación en cada una de ellas. El script imprimirá el nombre y la media de sus calificaciones <br><br>
+    </p>
+    <script>
+        let alumno={
+           nombre: "Pedro Perez",
+           calificaciones:{
+            ingles:3.5,
+            programacion:4.0,
+            html:3.0,
+           } 
+        }
+        function CalcularMedia(){
+            let totalCalificacion=alumno.calificaciones.ingles+
+                                  alumno.calificaciones.html+
+                                  alumno.calificaciones.programacion;
+            let totalMedia=totalCalificacion/3;
+            document.getElementById("media").innerHTML ="Nombre del alumno: " + alumno.nombre + "<br>" + "Media de calificaciones: " + totalMedia.toFixed(2);
+        }
+        CalcularMedia();
+    </script>
+
+    <p>
+        4.Crear un array de strings y retorne una string igual a la concatenación de todos sus elementos.
+
+        Ejemplo:
+        console.log(concatenar(["s","a","r","a","s","a"])); // imprime "sarasa"
+        console.log(concatenar(["h","o","l","a"])); // imprime "hola"
+
+    </p>
+    <script>
+        function concatenar(array) {
+        return array.join(''); 
+}
+        console.log(concatenar(["s", "a", "r", "a", "s", "a"])); 
+        console.log(concatenar(["h", "o", "l", "a"]));
+    </script>
+</body>
+</html>
