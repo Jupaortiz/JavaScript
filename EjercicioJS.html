@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <h1>Manipulación de Datos con LocalStorage</h1>
+        <p>
+            LocalStorage es una herramienta compatible con HTML5 y los navegeradores, gracias a esta podemos almacenar de manera local datos en el navegador que utiliza el usuario mientras navega. Esta información quedará almacenada para que siempre que el usuario inicia en su navegador estos datos esten ahí. LocalStorage trabaja de manera similar que las cookies, sin embargo, cuenta con un espacio de 5mb y al trabajar de manera local no necesita hacer peticiones al servidor.
+        </p>
+        <h3>¿Como se utiliza LocalStorage?</h3>
+        <p>
+            LocalStorage es una herramienta que se utiliza via JavaScript, donde podremos manipular datos almacenados de acuerdo a los codigos programados con este lenguaje. Para acceder a este almacemaniento se hace: Una vez ejecutada la aplicación--> Clic derecho-inspeccionar, vamos al apartado de Application(aplicación) y a mano izquierda aparece el menu del LocalStorage.
+        </p>
+        <h3>Metodos del LocalStorage para manipular datos</h3>
+        <p>
+            1.localStorage.setItem("clave",valor): Este es el metodo para almacenar información en nuestro LocalStorage. En el primer parametro "clave" es donde ingresamos el nombre del elemento y en el parametro valor ingresamos el dato que almacenará el parametro clave.
+        </p>
+        <script>
+            localStorage.setItem("Nombre","Maria");
+            //Almacena una clave(Nombre) y un valor(Maria)
+        </script>
+        <p>
+            localStorage.getItem("clave"):Este metodo me sirve para traer el valor almacenado en una clave especifica
+        </p>
+        <script>
+            console.log("El nombre almacenado en el Local Storage es: "+localStorage.getItem("Nombre"))
+        </script>
+        <h2>Intercambio de datos por medio de JSON</h2>
+        <p>
+            Para poder almacenar arreglos y objetos en el LocalStorage se deben de convertir en una cadena de Caracteres(String), para eso usaremos JSON. 
+            <br>
+            JSON.stringify()
+        </p>
+        <script>
+            let persona={
+                id:123,
+                nombre:"David",
+                apellido:"Rios",
+                edad:34
+            }
+            //Guardar este objeto en el LocalStorage:
+            localStorage.setItem("Persona1",JSON.stringify(persona));
+            // Transformar el objeto en un String
+        </script>
+        <p>
+            Convetir un String almacenado en el LocalStorage en un objeto: JSON.parse
+        </p>
+        <script>
+            let personaconvertida=JSON.parse(localStorage.getItem("Persona1"));
+            console.log(personaconvertida);
+        </script>
+        <script>
+
+           //1.Pide al usuario que ingrese su nombre mediante un prompt
+          // let nombre1=prompt('Ingrese su nombre');
+           //2.Guardar el nombre ingresado en el LocalStorage
+           //localStorage.setItem('NombreUsuario',nombre1);
+           //3.Muestra el nombre ingresado.
+          // console.log("El nombre de usuario es: "+localStorage.getItem('NombreUsuario'));
+
+
+           /*
+            1.Pedir los datos (prompt) y Guardar el siguiente Objeto en el localStorage: 
+            Cedula:
+            Nombre
+            Apellido
+            2.Despues de almacenarlo, mostrar en la consola la cedula y el nombre
+           */
+          let usuario={
+            Cedula:"",
+            Nombre:"",
+            Apellido:""
+          }
+          //Llenando la información del objeto
+          usuario.Cedula=prompt("Ingrese su cedula");
+          usuario.Nombre=prompt("Ingrese su nombre");
+          usuario.Apellido=prompt("Ingrese su apellido");
+          //Enviando el Objeto al LocalStorage
+          localStorage.setItem("Usuario2",JSON.stringify(usuario));
+          //mostrar en la consola la cedula y el nombre
+          let usuariobjeto=JSON.parse(localStorage.getItem("Usuario2"));
+          console.log("La cedula es: "+usuariobjeto.Cedula);
+          console.log("El nombre de usuario es: "+usuariobjeto.Nombre);
+        </script>
+
+        <h2>Eliminar valores del LocalStorage</h2>
+        <p>
+            Se usa el metodo removeItem('') y recibe la clave del elemento que deseamos 
+        </p>
+
+        
+    
+    <h1>Manipulacion de datso con LocalStorage</h1>
+    
+        <form >
+            <label>Nombre</label>
+            <input type="text" placeholder="Ingresa tu nombre" id="nombre">
+            <br><br>
+            <label >Apllido</label>
+            <input type="text" placeholder="Ingresa apellido" id="apellido">
+            <br><br>
+            <input type="button" id="guardar" value="Guardar Datos">
+        </form>
+        <hr>
+        <button type="button" id="mostrar">Mostrar Datos</button>
+        <p>Tu nombre es : <b id="mostrarNombre"></b> </p>
+        <p>y tu apllido es : <b id="mostrarApellido"></b> </p>
+
+
+        <script src="./GuardarDatos.js"></script>
+</body>

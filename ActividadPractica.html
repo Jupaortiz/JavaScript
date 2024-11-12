@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Actividad Practa local Storage</h1>
+    <p>1.Crear un formulario donde solicitamos el nombre, la contraseña y la valdacion de la contraseña en un usuario (debemos valaidar que ambas contraseñas sean las mias) y los almacenamos, el formulario tambien cuenta con la posibilidad de recuperar los datos ingresados</p>
+    <form action="">
+        <label>Nombre</label>
+        <input type="text" placeholder="Ingresa tu nombre" id="nombre">
+        <br><br>
+        <label >Contraseña</label>
+        <input type="text" placeholder="Ingresa contraseña" id="contraseña">
+        <br><br>
+        <label >Confirmar Contraseña</label>
+        <input type="text" placeholder="Confirmar contraseña" id="confirmarContraseña">
+        <br><br>
+        <input type="button" id="guardar" value="Guardar Datos"> 
+        <br><br>
+        <label for="">Da click para ver tu nombre y tu contraseña</label>
+        <br><br>
+        <input type="button" value="Recuperar Datos" id="mostrar">
+    </form>
+    <p id="recuperar">Nombre:<b id="nombrex"></b><br>
+                     Contraseña: <b id="contraseñax"></b><br>
+                      Contraeña confirmada:<b id="confirmarContraseñax"></b>
+    
+    </p>
+
+    <script src="./actividad.js"></script>
+</body>
+</html>
